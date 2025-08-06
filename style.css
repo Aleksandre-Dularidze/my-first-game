@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -118,6 +118,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
+/* General styles for .difficulty-overlay */
 .difficulty-overlay {
   position: fixed;
   top: 0;
@@ -131,17 +132,21 @@ h1 {
   align-items: center;
   z-index: 1000;
   text-align: center;
-  margin: 20px;
+  padding: 20px; /* Add padding for better spacing */
+  box-sizing: border-box;
 }
 
 .difficulty-overlay h2 {
   color: white;
   margin-bottom: 20px;
+  font-size: 2rem; /* Adjust font size for better scaling */
 }
 
 .difficulty-options {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 10px; /* Adjust gap for better spacing */
+  justify-content: center;
 }
 
 .difficulty-options .btn {
@@ -173,55 +178,61 @@ h1 {
   font-size: 16px;
 }
 
-/* Media query for tablets (max-width: 768px) */
-@media (max-width: 768px) {
+/* Media query for tablets (min-width: 768px and max-width: 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .difficulty-options button {
-    font-size: 14px;
-    padding: 8px 16px;
+    font-size: 15px;
+    padding: 9px 18px;
   }
 
   .number {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   .guess {
-    width: 80%;
-    font-size: 1.2rem;
+    width: 70%;
+    font-size: 1.5rem;
   }
 
   .btn {
-    font-size: 1rem;
-    padding: 8px 12px;
+    font-size: 1.2rem;
+    padding: 10px 15px;
   }
 }
 
 /* Media query for mobile devices (max-width: 480px) */
-@media (max-width: 480px) {
-  .difficulty-options button {
-    font-size: 12px;
-    padding: 6px 12px;
+
+/* Media query for smartphones (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  .difficulty-overlay h2 {
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+  }
+
+  .difficulty-options .btn {
+    padding: 10px 20px; /* Adjust padding for smaller buttons */
+    font-size: 14px; /* Reduce font size */
   }
 
   .number {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .guess {
-    width: 100%;
-    font-size: 1rem;
+    width: 90%;
+    font-size: 1.1rem;
   }
 
   .btn {
-    font-size: 0.9rem;
-    padding: 6px 10px;
+    font-size: 1rem;
+    padding: 8px 10px;
   }
 
   .message {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .label-score,
   .label-highscore {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
