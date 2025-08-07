@@ -128,7 +128,7 @@ document.querySelector(".check").addEventListener("click", function () {
 });
 
 document.querySelector(".again").addEventListener("click", function () {
-  score = 20;
+  score = maxScore; // Use the current maxScore based on difficulty
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   gameActive = true; // Reactivate game
   // window.location.reload();
